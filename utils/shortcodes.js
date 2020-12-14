@@ -98,12 +98,12 @@ module.exports = {
         class="${className ? `img-${className}` : ''}"
         loading="${lazy ? 'lazy' : 'eager'}"
         src="${fallback.url}"
-        width="${fallbackWidth ?? fallback.width}"
-        height="${fallbackHeight ?? fallback.height}" alt="${alt}">
+        width="${fallbackWidth = fallback.width}"
+        height="${fallbackHeight = fallback.height}" alt="${alt}">
     </picture>`;
     return title
       ? outdent({ newline: '' })`
-      <figure class="${className ? `fig-${className}` : ''}"
+      <figure class="${className = `fig-${className}` : ''}"
         ${picture}
         <figcaption>${markdown.renderInline(title)}</figcaption>
       </figure>`
