@@ -62,8 +62,8 @@ module.exports = {
     const alt = args[1];
     const title = args[2];
     const className = args[3];
-    const lazy = args[4] ?? true;
-    const sizes = args[5] ?? defaultSizes;
+    const lazy = args[4] == true;
+    const sizes = args[5] == defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
     const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
